@@ -1,0 +1,114 @@
+<div id="img-container" class="img-container" {...Astro.props}>
+    <div class="box">
+      <img
+        src="https://res.cloudinary.com/desaac6ma/image/upload/v1706330362/Slider%20portfolio/image_slider_1_qxqjsr.jpg"
+        alt=""/>
+    </div>
+    <div class="box">
+      <img
+        src="https://res.cloudinary.com/desaac6ma/image/upload/v1706330362/Slider%20portfolio/image_slider_2_l5hhy3.jpg"
+        alt=""/>
+    </div>
+    <div class="box">
+      <img
+        src="https://res.cloudinary.com/desaac6ma/image/upload/v1706330362/Slider%20portfolio/image_slider_3_k3aum1.jpg"
+        alt=""/>
+    </div>
+    <div class="box">
+      <img
+        src="https://res.cloudinary.com/desaac6ma/image/upload/v1706330362/Slider%20portfolio/image_slider_4_jmifxj.jpg"
+        alt=""/>
+    </div>
+    <div class="box">
+        <img
+          src="https://res.cloudinary.com/desaac6ma/image/upload/v1706330362/Slider%20portfolio/image_slider_5_osqjgn.jpg"
+          alt=""/>
+      </div>
+      <div class="box">
+        <img
+          src="https://res.cloudinary.com/desaac6ma/image/upload/v1706330362/Slider%20portfolio/image_slider_6_rgzcv1.jpg"
+          alt=""/>
+      </div>
+  </div>
+
+<style>
+           
+.img-container {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  perspective: 500px;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+}
+.box {
+  box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+  width: 250px;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+
+  position: fixed;
+  top: 50%;
+  transition: 5000ms  ;
+}
+.box img {
+  width: 100%;
+  height: 100%;
+}
+.box:first-of-type {
+  z-index: 5;
+  opacity: 0;
+  left: 3%;
+  transform: translate(-50%, -50%) rotateY(-10deg);
+  transition: 2000ms 
+}
+.box:nth-of-type(2) {
+  opacity: 1;
+  left: 6%;
+  transform: translate(-50%, -50%) rotateY(-10deg);
+  z-index: 5;
+  transition: 2000ms 
+}
+.box:nth-of-type(3) {
+  left: 9%;
+  opacity: 0.75;
+  z-index: 10;
+  transform: translate(-50%, -50%) rotateY(-10deg) translateZ(-50px);
+  transition: 2000ms 
+}
+.box:nth-of-type(4) {
+  z-index: 15;
+  opacity: 0.5;
+  left:12%;
+  transform: translate(-50%, -50%) rotateY(-10deg) translateZ(-100px);
+  transition: 2000ms 
+}
+.box:nth-of-type(5) {
+  z-index: 20;
+  opacity: 0.25;
+  left:15%;
+  transform: translate(-50%, -50%) rotateY(-10deg) translateZ(-150px);
+  transition: 2000ms 
+}
+.box:nth-of-type(6) {
+  z-index: 25;
+  opacity: 0;
+  left:18%;
+  transform: translate(-50%, -50%) rotateY(-10deg) translateZ(-200px);
+  transition: 2000ms 
+}
+        </style>
+
+  <script>
+    let imgContainer = document.querySelector("#img-container") as HTMLCanvasElement;
+    setInterval(() => {
+    let last = imgContainer.firstElementChild;
+    last?.remove();
+    if(last !== null) {
+        imgContainer.appendChild(last);
+    }
+    }, 2500);
+  </script>
+</body>

@@ -1,0 +1,149 @@
+---
+import GitHub from "../icons/GitHub.astro" 
+import Tailwind from "../icons/Tailwind.astro"
+import FolderCodeIcon from '../icons/FolderCode.astro'
+import AppWindowIcon from '../icons/AppWindow.astro'
+import React from "../icons/React.astro"
+import AstroIcon from "../icons/AstroIcon.astro"
+import Express from "../icons/Express.astro"
+import Sequelize from "../icons/Sequelize.astro"
+import PostgreSQL from "../icons/PostgreSQL.astro"
+import Html from "../icons/Html.astro"
+import JavaScript from "../icons/JavaScript.astro"
+import Redux from "../icons/Redux.astro"
+import Firebase from "../icons/Firebase.astro"
+
+const TAGS = {
+  TAILWIND: {
+    name: "Tailwind CSS",
+    icon: Tailwind,
+  },
+  REACT: {
+    name: "React",
+    icon: React,
+  },
+  GITHUB: {
+    name: "GitHub",
+    icon: GitHub,
+  },
+  ASTRO: {
+    name: "Astro",
+    icon: AstroIcon,
+  },
+  EXPRESS: {
+    name: "Express.js",
+    icon:Express,
+  },
+  SEQUELIZE: {
+    name: "Sequelize",
+    icon: Sequelize,
+  },
+  POSTGRESQL:{
+    name: "PostgreSQL",
+    icon: PostgreSQL
+  },
+  HTML :{
+    name: "HTML",
+    icon: Html,
+  },
+  JAVASCRIPT: {
+    name: "Javascript",
+    icon: JavaScript,
+  },
+  REDUX: {
+    name: "Redux",
+    icon: Redux,
+  },
+  FIREBASE :{
+    name: "Firebase",
+    icon: Firebase,
+  }
+}
+const PROJECTS = [  
+  {
+    title: "Laura Vargas - Sejas y Pestañas",
+    description:
+      "Intranet con autenticación de usuarios, notificaciones por email, CRUD de tablas, agenda y atención de citas, manejo de inventario y dashboard de información estadistica y contable. Debido a ser un proyecto privado no puedo mostrar el sitio web ni el código fuente.",
+    video: "https://res.cloudinary.com/desaac6ma/video/upload/v1705630155/laura-vargas_Video_presentaci%C3%B3n_1_rep4ja.mp4",
+    github: "https://github.com/pheralb/svgl",
+    image: "https://res.cloudinary.com/desaac6ma/image/upload/v1706400344/Videos%20e%20imagenes%20portfolio/LauraVargas_b2q0f3.jpg",
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.SEQUELIZE, TAGS.EXPRESS, TAGS.POSTGRESQL, TAGS.JAVASCRIPT, TAGS.REDUX, TAGS.FIREBASE],
+  },
+  {
+    title: "Clon - Landing Tesla 2024",
+    description:
+      "En este proyecto recree la landing page de Tesla 2024 mediante la implementación del framework Astro junto con HTML, CSS, JavaScript y Tailwind CSS. Infundí creatividad en cada detalle, realizando pequeñas modificaciones según mis preferencias para darle un toque distintivo al proyecto.",
+    deploy: "https://landing-tesla-2024-clon.netlify.app/ ",
+    repository:"https://github.com/castanedad121/Clon-Landing-Tesla",
+    image: "https://res.cloudinary.com/desaac6ma/image/upload/v1706400345/Videos%20e%20imagenes%20portfolio/ClonTesla_qlq02d.jpg",
+    tags: [TAGS.GITHUB, TAGS.TAILWIND, TAGS.ASTRO, TAGS.HTML, TAGS.JAVASCRIPT],
+    video: "https://res.cloudinary.com/desaac6ma/video/upload/v1706400346/Videos%20e%20imagenes%20portfolio/Landing_Tesla_2024_Cloudinary_vf4oet.mp4"
+  },
+]
+---
+
+<div class="flex flex-col w-full gap-6">
+  {
+    PROJECTS.map(({title, description, deploy, repository, image, video, tags }:{ title:string, description:string, deploy?:string, repository?:string, image:string, video:string, tags:{name:string, icon:any}[] }) => (
+     
+<div class="w-full rounded-lg  bg-gray-900/15 border  border-white/10 flex justify-center items-center flex-col p-4">
+    <video controls src={video} class="p-x-4 rounded-md" poster={image} ></video>
+    <div class="p-5">
+        <a href="#">
+            <h5 class="mb-2 text-xl sm:text-2xl font-bold tracking-tight text-white">{title}</h5>
+        </a>
+        <p class="mb-3 text-sm  text-gray-400">{description}</p>
+        <div class="flex gap-x-4 justify-center flex-wrap gap-y-3">
+               
+                {
+                    repository ?
+                    <a href={repository} target="_blank"
+                rel="noopener noreferrer" class="inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 text-sm font-light sm:font-normal text-center text-white  rounded-lg focus:ring-4 focus:outline-none bg-blue-600 hover:bg-blue-700 focus:ring-blue-800" >
+                    Repositorio
+                    <FolderCodeIcon class="size-5 ml-2" />                 
+                </a>
+                : <></>
+                }
+                
+            {
+                deploy ?
+                <a href={deploy} target="_blank"
+                rel="noopener noreferrer" class="inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 text-sm font-light sm:font-normal text-center text-white  rounded-lg focus:ring-4 focus:outline-none bg-blue-600 hover:bg-blue-700 focus:ring-blue-800" >
+                Sitio Web
+                <AppWindowIcon class="size-5 ml-2" />
+            </a>
+            : <></>
+            }
+            
+        </div>
+        <hr class="my-4"/>
+        <div class="flex justify-center flex-col gap-y-2">
+         
+               <div class="flex justify-center rounded-md shadow-sm ">
+                {tags.map((tag, index) => (
+                  index < 5 &&
+                   <span class={`inline-flex gap-x-2 items-center px-2 py-2 text-sm font-light border  border-green-600 text-green-400
+                      ${index === 0 && "rounded-s-lg"} ${index === 4 && "rounded-e-lg"}`}>
+                           <tag.icon class="size-5" />
+                       <span class="hidden sm:block text-nowrap">{tag.name}</span> 
+                   </span>                               
+                ))}
+               </div>
+               <div class="flex justify-center rounded-md shadow-sm ">
+                {tags.map((tag, index) => (
+                
+                   index > 4  && index < tags.length &&
+                     <span class={`inline-flex gap-x-2 items-center px-2 py-2 text-sm font-light border  border-green-600 text-green-400
+                        ${index === 5 && "rounded-s-lg"} ${index === tags.length-1 && "rounded-e-lg"}`}>
+                             <tag.icon class="size-5" />
+                         <span class="hidden sm:block text-nowrap">{tag.name}</span> 
+                     </span>                               
+                  ))}
+               </div>
+          </div>
+    </div>
+</div>
+     
+    ))
+  }
+</div>

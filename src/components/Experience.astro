@@ -1,0 +1,38 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Diciembre 2023",
+    title: "Desarrollador Full Stack − Laura Vargas Cejas y Pestañas",
+    description:
+      "Miembro del equipo de desarrollo de una aplicación de control interno de empleados, manejo de stock de insumos, agenda y atención de citas, autenticación de usuario, notificaciones por email y dashboard de información estadistica y contable para Laura Vargas, una empresa colombiana dedicada a la Belleza, cosmética y cuidado personal.",
+  },
+  {
+    date: "Septiembre 2023 - diciembre 2023",
+    title: "Supervisor de Almacén y Soporte Informático  − INEI",
+    description:
+      "Responsable del manejor de los sistemas de inforación y brindar el soporte TI a todos los miembros del proyecto Evaluación Nacional de Logros de Aprendizaje - ENLA 2023.",
+  },
+  {
+    date: "Mayo 2021 - julio 2022",
+    title: "Encargado de Soporte Informático  − Learn & Asociados S.A.C.",
+    description:
+      "Brinde soporte informático integral a proyectos, implementé herramientas tecnológicas innovadoras, desarrollé y mantuve páginas web con WordPress, y administré el Sistema de Administración de Cursos (LMS) Moodle, aplicando metodologías ágiles Scrum. También supervisé el mantenimiento de hosting y dominios, logrando eficiencia operativa y mejorando la experiencia del usuario.",
+  },
+  {
+    date:"Marzo 2020 - diciembre 2020",
+    title: "Coordinador de Innovación y Soporte Tecnológico (CIST) - I.E. N° 35 Eduvigis Noriega De La Fora",
+    description: "Ofrecí asistencia técnica para garantizar un uso efectivo de las tecnologías de la información y comunicación (TIC), optimizando así el proceso de aprendizaje tanto para estudiantes como para docentes, coordinadores y directivos en la institución educativa."
+  }
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

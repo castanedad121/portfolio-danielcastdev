@@ -1,0 +1,67 @@
+---
+import Badge from "./Badge.astro";
+import Slider from "./Slider.astro";
+---
+
+<div
+  class="rounded-lg w-full p-x-4 flex flex-col justify-center gap-3 items-center font-light"
+>
+  <div
+    class="shadow flex justify-center items-center flex-col sm:flex-row p-2 gap-2 rounded-lg bg-gray-900/15 border border-white/10"
+  >
+    <span class="text-5xl">👋</span>
+    <p class="text-xs sm:text-sm text-pretty">
+      ¡Hola nuevamente!, durante mi etapa formativa como ingeniero de sistemas
+      conocí los algoritmos, rápidamente supe que este era el camino. La
+      capacidad de mantener mi mente activa, analizar problemas y proponer
+      soluciones siempre ha sido algo que disfruto. Programaba con .NET, Java y
+      C++, maravillándome por todo lo que se podía lograr con ellos.
+    </p>
+  </div>
+  <div
+    class="shadow flex justify-center items-center flex-col sm:flex-row p-2 gap-1 rounded-lg bg-gray-900/15 border border-white/10"
+  >
+    <span class="text-6xl">🎓</span>
+    <p class="text-xs sm:text-sm">
+      Al graduarme, trabajé como soporte informático, donde adquirí valiosas
+      habilidades y experiencias. Al pasar los años me di cuenta de que me había
+      alejado del camino que realmente deseaba recorrer con la programación.
+      Decidí dar un giro y actualizar mis conocimientos y convertirme en un
+      desarrollador full stack en el bootcamp de Henry.
+    </p>
+  </div>
+  <div
+    class="w-full flex justify-center items-center pl-28 min-[375px]:pl-36 min-[425px]:pl-40 min-[480px]:pl-48"
+  >
+    <Slider />
+  </div>
+
+  <div
+    class="rounded-lg shadow flex justify-center items-center flex-col sm:flex-row p-2 gap-2 bg-gray-900/15 border border-white/10"
+  >
+    <span class="text-5xl">✈️</span>
+    <p class="text-xs sm:text-sm text-pretty">
+      Este viaje me ha permitido redescubrir la misma fascinación que
+      experimenté al conocer los algoritmos por primera vez. Ahora estoy en la
+      búsqueda de nuevos desafíos que me permitan desarrollar todo mi potencial
+      como creador y solucionador de problemas.
+    </p>
+  </div>
+
+<div
+  class="rounded-lg shadow flex justify-center items-center flex-col sm:flex-row p-2 bg-gray-900/15 border border-white/10"
+>
+<span class="text-5xl">🤖</span>
+  <p class="w-full text-xs sm:text-sm text-pretty">
+    Quisiera compartir también mi perspectiva sobre la inteligencia artificial.
+    Debemos utilizar de manera responsable. Mi interés por las inteligencias
+    artificiales se refleja en mi trabajo, incluso las fotos del slider de esta
+    sección fueron generadas con IA. Creo firmemente en el impacto positivo que
+    la tecnología puede tener en nuestras vidas.
+  </p>
+</div>
+  <button id="thanks" class="flex justify-center text-center items-center pt-4">
+    <Badge>¡Gracias por explorar mi portfolio y conocer más sobre mi!</Badge>
+  </button>
+</div>
+
