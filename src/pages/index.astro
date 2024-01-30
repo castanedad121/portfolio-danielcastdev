@@ -41,7 +41,7 @@ import LogoAnimated from "../components/LogoAnimated.astro";
             </button>
           </div>
         </h1>
-        <h2 class="text-sm sm:text-lg lg:text-xl text-pretty">
+        <h2 class="text-sm sm:text-lg lg:text text-pretty">
           <span>+5 años de experiencia en el sector TI,</span>
           <span class="text-yellow-200/90">
             Ingeniero de Sistemas e Informática y Desarrollador Full Stack.
@@ -52,7 +52,7 @@ import LogoAnimated from "../components/LogoAnimated.astro";
             la tecnología es el mejor aliado para abordar los desafíos actuales.
           </span>
         </h2>
-        <nav class="flex justify-evenly flex-wrap-reverse gap-4 pt-4">
+        <nav class="w-full flex justify-evenly flex-wrap-reverse gap-0   pt-4 pb-4 min-[375px]:gap-4">
           <SocialLink
             href="https://www.linkedin.com/in/luis-daniel-casta%C3%B1eda-abanto/"
           >
@@ -67,11 +67,11 @@ import LogoAnimated from "../components/LogoAnimated.astro";
             <YouTubeIcon class="size-3 lg:size-6" />
             <span> YouTube</span>
           </SocialLink>
-          <SocialLink id="btnMail">
-            <MailIcon class="size-6 lg:size-7" />
-            <span id="miTextoClicable"> castanedad121@gmail.com</span>
-          </SocialLink>
         </nav>
+        <SocialLink id="btnMail">
+          <MailIcon class="size-6 lg:size-7" />
+          <span id="miTextoClicable"> castanedad121@gmail.com</span>
+        </SocialLink>
       </section>
      
       <SectionContainer id="experience">
