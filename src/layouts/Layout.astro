@@ -76,11 +76,11 @@ const { title, description } = Astro.props;
     }, 2000);
   });
   window.addEventListener("scroll", () => {
-    // Comprobar si el usuario ha llegado al final de la página
     const scrollPosition = window.scrollY + window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
+    const documentHeight = document.documentElement.offsetHeight; // Usa offsetHeight para mayor precisión.
 
-    if (scrollPosition >= documentHeight) {
+    // Agregamos un pequeño margen para evitar problemas de precisión
+    if (scrollPosition >= documentHeight - 5) {
       addConfetti();
     }
   });
