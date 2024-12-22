@@ -2,26 +2,7 @@
 import ExperienceItem from "./ExperienceItem.astro";
 const EXPERIENCIE = [
   {
-    date: "Mayo 2024 - actualidad",
-    title: "Desarrollador freelance - Remoto desde Perú",
-    description:
-      "Diseño y desarrollo de páginas web para clientes y empresas de diversos sectores, implementando proyectos mediante la metodología Scrum. Trabajo remoto con reuniones periódicas con los clientes para garantizar su satisfacción total; también desarrollo de soluciones rápidas y aplicaciones personalizadas para resolver problemas inmediatos en distintas empresas, utilizando macros en Microsoft Excel.",
-  },
-  {
-    date: "Septiembre 2024 - diciembre 2024",
-    title: "Supervisor de Almacén y Soporte Informático  − INEI",
-    description:
-      "Responsable del manejor de los sistemas de inforación y brindar el soporte TI a todos los miembros del proyecto Evaluación Nacional de Logros de Aprendizaje - ENLA 2024.",
-  },
-  {
-    date: "Noviembre 2023 - abril 2024",
-    title:
-      "Full Stack Teaching Assistant − Experiencia académica. Henry Bootcamp",
-    description:
-      "Coordinar a un grupo de estudiantes para lograr la integración al equipo de estudio. Asistir a la resolución de ejercicios y promover la colaboración grupal (Pair Programming). Proponer ideas para la mejora de los procesos del Bootcamp.",
-  },
-  {
-    date: "Diciembre 2023 - enero 2024",
+    date: "Diciembre 2023",
     title: "Desarrollador Full Stack − Laura Vargas Cejas y Pestañas",
     description:
       "Miembro del equipo de desarrollo de una aplicación de control interno de empleados, manejo de stock de insumos, agenda y atención de citas, autenticación de usuario, notificaciones por email y dashboard de información estadística y contable para Laura Vargas, una empresa colombiana dedicada a la Belleza, cosmética y cuidado personal.",
@@ -46,12 +27,14 @@ const EXPERIENCIE = [
       "Ofrecí asistencia técnica para garantizar un uso efectivo de las tecnologías de la información y comunicación (TIC), optimizando así el proceso de aprendizaje tanto para estudiantes como para docentes, coordinadores y directivos en la institución educativa.",
   },
 ];
+---
 
 <ol class="relative border-s border-gray-200 ml-3">
-  {EXPERIENCIE.map((experiencie) => (
-    <li class="mb-10 ms-4">
-      <ExperienceItem {...experiencie} />
-    </li>
-  ))}
-</ol>;
----
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
